@@ -34,7 +34,6 @@ if ( $lata == "") {
 //nie ma sensu walidować dalej gdy brak parametrów
 if (empty( $messages )) {
 	
-	// sprawdzenie, czy $x i $y są liczbami całkowitymi
 	if (! is_numeric( $kwota )) {
 		$messages [] = 'Kwota nie jest liczbą';
 	}
@@ -59,12 +58,14 @@ if (empty( $messages )) {
 // 3. wykonaj zadanie jeśli wszystko w porządku
 
 if (empty ( $messages )) { // gdy brak błędów
-	
+	$kwota = round(floatval($kwota), 2);
+	$oproc = floatval($oproc);
 	$lata = intval($lata);
-	$result = round($kwota * (1 + $oproc / 100) / $lata / 12, 2);
+	$result = ($kwota + $kwota * $oproc / 100 * $lata) / ($lata * 12);
+	$result = round($result, 2);
 }
 
 // 4. Wywołanie widoku z przekazaniem zmiennych
-// - zainicjowane zmienne ($messages,$x,$y,$operation,$result)
+// - zainicjowane zmienne
 //   będą dostępne w dołączonym skrypcie
 include 'calc_view.php';
