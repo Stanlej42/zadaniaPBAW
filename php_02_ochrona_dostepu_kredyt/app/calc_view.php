@@ -17,11 +17,11 @@
 
 <form action="<?php print(_APP_URL);?>/app/calc.php" method="get" class="pure-form pure-form-stacked">
 	<label for="id_kwota">Kwota kredytu(zł): </label>
-	<input id="id_kwota" type="text" name="kwota" value="<?php out($kwota) ?>" />
+	<input id="id_kwota" type="text" name="kwota" value="<?php out($form['kwota']) ?>" />
 	<label for="id_oproc">Oprocentowanie(%): </label>
-	<input id="id_oproc" type="text" name="oproc" value="<?php out($oproc) ?>" />
+	<input id="id_oproc" type="text" name="oproc" value="<?php out($form['oproc']) ?>" />
 	<label for="id_lata">Okres(lata): </label>
-	<input id="id_lata" type="text" name="lata" value="<?php out($lata) ?>" />
+	<input id="id_lata" type="text" name="lata" value="<?php out($form['lata']) ?>" />
 	<input type="submit" value="Oblicz" />
 </form>	
 
