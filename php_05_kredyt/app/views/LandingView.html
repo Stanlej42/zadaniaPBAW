@@ -1,0 +1,30 @@
+{extends "main.html"}
+
+{block name=content}
+
+<div id="main">
+    <section class="tiles">
+        <article>
+            <span class="image">
+                <img src="{$conf->app_root}/assets/images/money.jpg" alt="pieniądze" />
+            </span>
+            <header class="major">
+                <h3><a href="{$conf->action_root}calcCompute" class="link">Kalkulator kredytowy</a></h3>
+            </header>
+        </article>
+
+        <article>
+            <span class="image">
+                <img src="{$conf->app_root}/assets/images/math-formulas.jpg" alt="Wzory matematyczne" />
+            </span>
+            <header class="major">
+                <h3><a href="{$conf->action_root}formula" class="link">Wzór obliczeń</a></h3>
+            </header>
+        </article>
+        
+    </section>
+
+</div>
+
+
+{/block}
