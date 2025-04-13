@@ -1,0 +1,17 @@
+{extends "main.html"}
+
+{block name=content}
+
+{literal}
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    \[r = \left(k + {k \cdot {p \over 100} \over l}\right) {1 \over 12 \cdot l} \]
+    gdzie:
+    <ul>
+        <li>\(r\) &ndash; miesięczna rata kredytu,</li>
+        <li>\(k\) &ndash; całkowita kwota kredytu,</li>
+        <li>\(p\) &ndash; oprocentowanie kredytu,</li>
+        <li>\(l\) &ndash; okres kredytu w latach.</li>
+    </ul>
+{/literal}
+
+{/block}

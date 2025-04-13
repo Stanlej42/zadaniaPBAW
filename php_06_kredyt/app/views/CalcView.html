@@ -1,0 +1,42 @@
+{extends "main.html"}
+
+{block name=content}
+
+<div class="row">
+	{if !$messages->isEmpty()}
+		<div class="col-8 col-12-medium">
+	{else}
+		<div class="col-12">	
+	{/if}
+		<form action="{$conf->action_root}calcCompute" method="post">
+			<div class="fields">
+				<div class="field half">
+					<label for="id_amount">Kwota kredytu(zł): </label>
+					<input id="id_amount" type="text" name="amount" value="{$form->amount}" />
+				</div>
+				<div class="field half">
+					<label for="id_interest">Oprocentowanie(%): </label>
+					<input id="id_interest" type="text" name="interest" value="{$form->interest}" />
+				</div>
+				<div class="field">
+					<label for="id_years">Okres(lata): </label>
+					<input id="id_years" type="text" name="years" value="{$form->years}" />
+				</div>
+			</div>
+		<input type="submit" class="button primary fit" value="Oblicz"/>
+		</form>	
+	</div>
+	{if !$messages->isEmpty()}
+	<div class="col-4 col-12-medium">
+		{include file='messages.html'}
+	</div>
+	{/if}
+</div>
+
+{if isset($result->monthly_installment)}
+	<h2 id="result" class="align-center">
+		Wynik: {$result->monthly_installment}
+	</h2>
+{/if}
+
+{/block}
